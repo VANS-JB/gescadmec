@@ -10,7 +10,7 @@ use App\Http\Controllers\AuthentificateController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('utilisateurs.register');
 });
 
 // Routes d'authentification
