@@ -5,7 +5,7 @@
     <div class="col-12 text-center">
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Mon Application</a>
+            <a class="navbar-brand" href="#"></a>
             
             <div class="navbar-nav ms-auto">
                 <span class="navbar-text me-3">
