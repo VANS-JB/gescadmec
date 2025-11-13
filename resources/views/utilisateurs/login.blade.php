@@ -44,3 +44,10 @@
     </div>
 </div>
 @endsection
+
+<style>
+
+.navbar-nav.ms-auto {
+    display: none;
+}
+</style>

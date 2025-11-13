@@ -11,10 +11,7 @@
                 <span class="navbar-text me-3">
                     Bienvenue, {{ Auth::user()->name }}
                 </span>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="btn btn-outline-light btn-sm">Déconnexion</button>
-                </form>
+                
             </div>
         </div>
     </nav>

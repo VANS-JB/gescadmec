@@ -125,17 +125,8 @@ public function edit(Etudiant $etudiant)
 public function destroy(Etudiant $etudiant)
 {
     try {
-        // Vérifier s'il y a des inscriptions, paiements ou besoins
-        if ($etudiant->inscriptions()->count() > 0 || 
-            $etudiant->besoins()->count() > 0) {
-            
-            return redirect()->route('etudiants.show', $etudiant->id)
-                ->with('error', 
-                    'Impossible de supprimer cet étudiant. ' .
-                    'Veuillez d\'abord supprimer toutes ses inscriptions et besoins.'
-                );
-        }
-
+        // OPTION 1 : Suppression simple (recommandée)
+        // La base de données gère automatiquement la suppression en cascade
         $etudiant->delete();
 
         return redirect()->route('etudiants.index')
@@ -143,7 +134,7 @@ public function destroy(Etudiant $etudiant)
 
     } catch (\Exception $e) {
         return redirect()->route('etudiants.show', $etudiant->id)
-            ->with('error', 'Une erreur est survenue lors de la suppression.');
+            ->with('error', 'Une erreur est survenue lors de la suppression: ' . $e->getMessage());
     }
 }
 }

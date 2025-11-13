@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="{{ route('utilisateurs.dashboard') }}">
-                <i class="fas fa-language"></i> GESCADMEC
+                 GESCADMEC
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -42,6 +42,14 @@
                         <a class="nav-link" href="{{ route('besoins.index') }}">
                             <i class="fas fa-comments"></i> Besoins
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-light btn-sm">
+                                Déconnexion
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>
